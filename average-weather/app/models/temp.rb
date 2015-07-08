@@ -2,8 +2,7 @@ require 'httparty'
 
 
 class Temp
-  attr_accessor: 
-
+  
   def self.get_far_average (query)
     @openweather = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?zip=#{query},us").parsed_response["main"]["temp"]
 
@@ -17,10 +16,6 @@ class Temp
 
     @average_temp = (@far_openweather + @dark_sky) / 2
     @average_temp = @average_temp.round(2)
-  end
-
-  def self.get_cel_average
-
   end
 
 
