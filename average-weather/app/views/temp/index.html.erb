@@ -1,0 +1,9 @@
+<h3>Enter your zipcode to get the average current temperature in your area! </h3>
+
+<p><%= form_tag "/temp", method: "get" do %>
+  <%= label_tag(:query, "Your zipcode:") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
+<% end %></p>
+
+<h1><%=@temp%> fahrenheit</h1>
