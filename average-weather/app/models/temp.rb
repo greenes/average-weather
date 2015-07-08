@@ -2,8 +2,8 @@ require 'httparty'
 
 
 class Temp
-  
-  def self.get_far_average (query)
+
+  def self.get_average (query)
     @openweather = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?zip=#{query},us").parsed_response["main"]["temp"]
 
     @lat = Geocoder.search(query).first.data["geometry"]["location"]["lat"]
